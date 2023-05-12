@@ -1,0 +1,22 @@
+<h1>Photo Upload</h1>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" formControlName="name" required>
+    <br>
+    <br>
+    <label for="title">Title: </label>
+    <input type="text" id="title" name="title" formControlName="title" required>
+    <br>
+    <br>
+    <label for="comments">Comments: </label>
+    <input type="text" id="comments" name="comments" formControlName="comments" required>
+    <br>
+    <br>
+    <label for="archive">Archive: </label>
+    <input type="file" class="file-input" (change)="onFileSelected($event)" required>
+    <br>
+    <br>
+    <button type="submit" [disabled]="form.invalid" class="search-button">Submit</button>
+  </form>
+  <button type="button" (click)="back()">Cancel</button>
